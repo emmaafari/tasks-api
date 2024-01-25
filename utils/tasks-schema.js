@@ -3,7 +3,7 @@ import Joi from 'joi';
 export const validateTask = (task) => {
     const taskSchema = Joi.object({
         name: Joi.string().min(3).required(),
-        completed: Joi.bool().required()
+        completed: Joi.boolean().required()
     });
     
     const {error} = taskSchema.validate({ name: task.name, completed: task.completed });
